@@ -41,10 +41,18 @@ export default {
     provide('parentData', { a: 1, b: 1 })
   },
 
+  beforeCreate() {
+    console.log('App.vue beforeCreate')
+  },
+
   created() {
     console.log('App.vue created')
     // 子组件可以拿到值
     provide('parentDataOnCreated', { a: 2, b: 2 })
+  },
+
+  beforeMount() {
+    console.log('App.vue beforeMount')
   },
 
   mounted() {

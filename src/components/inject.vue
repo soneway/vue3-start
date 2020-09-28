@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import { inject } from 'vue'
+import { inject, provide } from 'vue'
 
 export default {
   setup() {
@@ -16,6 +16,22 @@ export default {
     const parentDataOnMounted = inject('parentDataOnMounted', {})
 
     return { parentData, parentDataOnCreated, parentDataOnMounted }
-  }
+  },
+
+  beforeCreate() {
+    console.log('inject.vue beforeCreate')
+  },
+
+  created() {
+    console.log('inject.vue created')
+  },
+
+  beforeMount() {
+    console.log('inject.vue beforeMount')
+  },
+
+  mounted() {
+    console.log('inject.vue mounted')
+  },
 }
 </script>
